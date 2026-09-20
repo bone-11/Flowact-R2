@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="FlowAct-R2: " name="description"/>
+<meta content="Diffusion Transformer, Agentic Video Generation, Streaming Video Generation" name="keywords"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>FlowAct-R2: </title>
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet"/>
+<link href="./static/css/bulma.min.css" rel="stylesheet"/>
+<link href="./static/css/bulma-carousel.min.css" rel="stylesheet"/>
+<link href="./static/css/bulma-slider.min.css" rel="stylesheet"/>
+<link href="./static/css/fontawesome.all.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet"/>
+<link href="./static/css/index.css?v=20260907_human_evaluation" rel="stylesheet"/>
+<link href="./static/images/logo-r2.png" rel="icon"/>
+<script defer="" src="./static/js/fontawesome.all.min.js"></script>
+<script src="./static/js/bulma-carousel.min.js"></script>
+<script src="./static/js/bulma-slider.min.js"></script>
+<script src="./static/js/index.js?v=20260907_single_video_playback"></script>
+<style>
+    .section {
+      margin-top: 0rem; /* 增加章节之间的间距 */
+      margin-bottom: 0rem; /* 增加章节之间的间距 */
+    }
+
+    .content {
+      margin-bottom: 0rem; /* 减小章节内的间距 */
+    }
+
+    h2.title {
+      margin-bottom: 0rem; /* 恢复章节标题和正文之间的间距 */
+    }
+  </style>
+</head>
+<body>
+<nav aria-label="main navigation" class="navbar" role="navigation">
+<div class="navbar-brand">
+<a aria-expanded="false" aria-label="menu" class="navbar-burger" role="button">
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+</a>
+</div>
+<div class="navbar-menu">
+<div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+<div class="navbar-item has-dropdown is-hoverable">
+<a class="navbar-link">
+                    More Research
+                </a>
+<div class="navbar-dropdown">
+<a class="navbar-item" href="https://grisoon.github.io/INFP/">
+                      INFP
+                    </a>
+<a class="navbar-item" href="https://grisoon.github.io/PersonaTalk/">
+                      PersonaTalk
+                    </a>
+<a class="navbar-item" href="https://grisoon.github.io/FlowAct-R1/">
+                      FlowAct-R1
+                    </a>
+</div>
+</div>
+</div>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-body">
+<div class="container is-max-widescreen">
+<div class="columns is-centered">
+<div class="column has-text-centered">
+<h1 class="title is-2 publication-title" style="display: inline-block; text-align: center;">
+<img alt="FlowAct-R2 Logo" class="img-responsive" src="./static/images/logo-r2.png" style="height: 1.1em; width: auto; vertical-align: middle; display: inline-block;"/>
+
+
+<span style="vertical-align: middle;">: Beyond Talking Avatar via Streaming Multimodal References and Proactive Agent Planning</span>
+</h1>
+
+<div class="is-size-5 publication-authors">
+<span class="author-block">
+<a href="">Ziyao Huang</a>,
+            </span>
+<span class="author-block">
+<a href="">Zhengkun Rong</a>,
+            </span>
+<span class="author-block">
+<a href="">Shiyang Qin</a>,
+            </span>
+<span class="author-block">
+<a href="">Shuang Liang</a>,
+            </span>
+<span class="author-block">
+<a href="">Wentao Hu</a>,
+            </span>
+
+
+
+<span class="author-block">
+<a href="">Yuxuan Luo</a>,
+            </span>
+<span class="author-block">
+<a href="">Yuan Zhang</a>,
+            </span>
+<span class="author-block">
+<a href="">Mingyuan Gao</a>
+</span>
+</div>
+
+<div class="column has-text-centered">
+<div class="publication-links">
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="hero teaser">
+<div class="container is-max-widescreen">
+<div class="hero-body">
+
+<div class="has-text-centered" style="margin-bottom: 2rem;">
+<img alt="FlowAct-R2 Overview" class="img-responsive" src="./static/images/teaser_v5.png" style="max-width: 100%; height: auto; border-radius: 10px;"/>
+</div>
+<h2 class="subtitle has-text-justified">
+<p>
+          We present <span class="dnerf">FlowAct-R2</span>, a next-generation framework for proactive, multimodal, and highly interactive humanoid video generation, enabling intelligent real-time streaming with rich behaviors across diverse live scenarios.
+        </p>
+<ul style="list-style-type: disc; padding-left: 20px;">
+<li><strong>Streaming Multimodal Reference Generation:</strong> By extending diffusion forcing from chunkwise generation to streaming multimodal references, FlowAct-R2 enables real-time video generation with rolling prompts and multimodal references, including continuously updated images, audio, and video, and supports hour‑level ultra‑long video generation with 720p. </li>
+<li><strong>Proactive Interaction Agent:</strong> 
+          To enable digital humans to autonomously drive their behavior when no external input is present, while seamlessly responding when interactions arise, FlowAct-R2 introduce an agent workflow with pre-online planning and online scheduling and response, which supports persona-driven behaviors, interruption handling, and skill execution for autonomous live interactions.</li>
+
+<li><strong>Rich Behaviors Across Diverse Live Scenarios:</strong> FlowAct-R2 supports real-time text and audio interactions across four representative scenarios—video chatting, live shopping, entertainment streaming, and interactive gaming—generating not only conversational responses but also expressive behaviors and task-oriented actions beyond conventional question answering.</li>
+
+</ul>
+</h2>
+<div class="columns results-carousel" id="results-carousel">
+<div class="column">
+<video controls="" height="100%" id="teaser2" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/entertainment_final_danmaku_only/nono_20260624_185701_647_withrefaudio_faststart.jpg?v=20260907">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/teaser/teaser_with_refs_20260907/nono_20260624_185701_647_withrefaudio_withrefs.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="column">
+<video controls="" height="100%" id="teaser3" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/shop/multigood_0902/case_004_005_006_crop1_comp_danmaku_first_frame.jpg?v=20260907_first">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/teaser/teaser_with_refs_20260907/case_004_005_006_crop1_comp_danmaku_withrefs.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="column">
+<video controls="" height="100%" id="teaser4" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/IG/r2_audience_danmaku_compressed_crf28/vlog_shichahai_v5_online_20260812_011014.jpg?v=20260907">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/teaser/teaser_with_refs_20260907/vlog_shichahai_v5_online_20260812_011014_withrefs.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="column">
+<video controls="" height="100%" id="teaser1" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/P0_talk_1_s2s_roleplay_20260820_v26_more_human_empathy_sophie_bgm010_20260826_faststart.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/P0_talk_1_s2s_roleplay_20260820_v26_more_human_empathy_sophie_bgm010_20260826_faststart.mp4" type="video/mp4"/>
+</video>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container is-max-widescreen">
+
+
+
+
+<div class="columns is-centered has-text-centered">
+<div class="column is-full" style="max-width: 100%;">
+<h2 class="title is-4">Method Overview</h2>
+<img alt="Interpolate start reference image." class="interpolation-image" src="./static/images/method_v10.png" style="max-width: 100%; height: auto;">
+<div class="content has-text-justified">
+<p></p>
+<p class="subtitle">
+            FlowAct-R2 introduces a <strong>Streaming Multimodal Reference DiT</strong> for streaming digital human video generation, built by adapting the pretrained Seedance 2.0 Mini reference-to-video backbone. By extending Diffusion Forcing to streaming multimodal references, the model continuously incorporates rolling action prompts, audio, and dynamically updated image, audio, and video references while preserving bidirectional spatiotemporal modeling. A video-driven RoPE aligns incoming reference chunks with the generation timeline, enabling references to be updated or switched during an ongoing stream. FlowAct-R2 further combines explicitly trained reference-plus-image conditioning with partially noised historical motion frames to preserve identity and appearance while reducing error accumulation. 
+          </p>
+<p class="subtitle">
+            Complementing the video generator, the <strong>Proactive Interaction Agent</strong> enables a digital human to proactively sustain a live session while remaining responsive to audience interactions. Offline, the agent derives a persona from multimodal character assets, organizes the session into a long-horizon agenda, and compiles complex behaviors into reusable multimodal skills. Online, it combines the prepared agenda and skills with audience events and summarized interaction history to determine what behavior to perform and how it should be scheduled. By initiating, overlaying, deferring, interrupting, or resuming behaviors according to the current context, the digital human can continue purposeful activities without continuous user prompts while responding naturally when new interactions arise.
+          </p>
+
+
+
+
+
+
+</div>
+</img></div>
+
+
+
+
+</div>
+</div></section>
+<section class="section">
+<div class="container is-max-widescreen">
+
+<h2 class="title is-3" style="margin-bottom: 1rem;">Entertainment Streaming</h2>
+<div class="content has-text-justified">
+<p class="subtitle">
+        FlowAct-R2 simulates lifelike entertainment streamers that interact with live audience messages and invoke skills to perform singing, dancing, and other talent-driven behaviors.
+      </p>
+</div>
+<div class="carousel results-carousel" id="entertainment-carousel" style="margin: 0 3rem;">
+<div class="item control-item">
+<video controls="" height="100%" id="entertainment7" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/entertainment_final_danmaku_only/sing1_faststart.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/entertainment_final_danmaku_only/sing1_faststart.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="item control-item">
+<video controls="" height="100%" id="entertainment3" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/entertainment_final_danmaku_only/dance2_faststart.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/entertainment_final_danmaku_only/dance2_faststart.mp4" type="video/mp4"/>
+</video>
+</div>
+
+<div class="item control-item">
+<video controls="" height="100%" id="entertainment6" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/entertainment_final_danmaku_only/qiaopixiaoyima_faststart.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/entertainment_final_danmaku_only/qiaopixiaoyima_faststart.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="item control-item">
+<video controls="" height="100%" id="entertainment9" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/entertainment_final_danmaku_only/zhangheyi_faststart.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/entertainment_final_danmaku_only/zhangheyi_faststart.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="item control-item">
+<video controls="" height="100%" id="entertainment8" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/entertainment_final_danmaku_only/yizhiyu_faststart.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/entertainment_final_danmaku_only/yizhiyu_faststart.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="item control-item">
+<video controls="" height="100%" id="entertainment1" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/entertainment_final_danmaku_only/chat2_sing1_faststart.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/entertainment_final_danmaku_only/chat2_sing1_faststart.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="item control-item">
+<video controls="" height="100%" id="entertainment4" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/entertainment_final_danmaku_only/instrument1_faststart.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/entertainment_final_danmaku_only/instrument1_faststart.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="item control-item">
+<video controls="" height="100%" id="entertainment2" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/entertainment_final_danmaku_only/chat4_faststart.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/entertainment_final_danmaku_only/chat4_faststart.mp4" type="video/mp4"/>
+</video>
+</div>
+</div>
+
+<div class="carousel results-carousel" id="offline-carousel" style="margin: 0 3rem;">
+
+<div class="item control-item">
+<video controls="" height="100%" id="offline1" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/offline_videos_comressed/1.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/offline_videos_comressed/1.mp4" type="video/mp4"/>
+</video>
+</div>
+
+
+
+<div class="item control-item">
+<video controls="" height="100%" id="offline3" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/offline_videos_comressed/4.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/offline_videos_comressed/4.mp4" type="video/mp4"/>
+</video>
+</div>
+
+<div class="item control-item">
+<video controls="" height="100%" id="offline4" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/offline_videos_comressed/5.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/offline_videos_comressed/5.mp4" type="video/mp4"/>
+</video>
+</div>
+
+
+
+
+<div class="item control-item">
+<video controls="" height="100%" id="offline7" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/offline_videos_comressed/8.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/offline_videos_comressed/8.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="item control-item">
+<video controls="" height="100%" id="offline8" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/offline_videos_comressed/9.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/offline_videos_comressed/9.mp4" type="video/mp4"/>
+</video>
+</div>
+
+<div class="item control-item">
+<video controls="" height="100%" id="interaction7" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/offline_videos_comressed/15.jpg?v=20260906">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/offline_videos_comressed/15.mp4" type="video/mp4"/>
+</video>
+</div>
+
+<div class="item control-item">
+<video controls="" height="100%" id="interaction7" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/offline_videos_comressed/24.jpg?v=20260906">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/offline_videos_comressed/24.mp4" type="video/mp4"/>
+</video>
+</div>
+
+</div>
+
+<h2 class="title is-3" style="margin-bottom: 1rem;">Live Shopping</h2>
+<div class="content has-text-justified">
+<p class="subtitle">
+        With streaming multi-reference conditioning, FlowAct-R2 enables live shopping avatars to hold products, try on items, and respond to audience feedback in interactive product-selling streams.
+      </p>
+</div>
+<div class="carousel results-carousel" id="shopping-carousel" style="margin: 0 3rem;">
+
+<div class="item control-item">
+<video controls="" height="100%" id="shopping1" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/shop/multigood_0902/case_001_002_003.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/shop/multigood_0902/case_001_002_003.mp4" type="video/mp4"/>
+</video>
+</div>
+
+
+
+<div class="item control-item">
+<video controls="" height="100%" id="shopping3" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/shop/generation_maihuo_0902_danmaku_compressed/case_085.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/shop/generation_maihuo_0902_danmaku_compressed/case_085.mp4" type="video/mp4"/>
+</video>
+</div>
+
+<div class="item control-item">
+<video controls="" height="100%" id="shopping4" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/shop/case_061.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/shop/case_061.mp4" type="video/mp4"/>
+</video>
+</div>
+
+<div class="item control-item">
+<video controls="" height="100%" id="shopping10" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/shop/case_104.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/shop/case_104.mp4" type="video/mp4"/>
+</video>
+</div>
+
+<div class="item control-item">
+<video controls="" height="100%" id="shopping5" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/shop/generation_maihuo_0902_danmaku_compressed/case_004.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/shop/generation_maihuo_0902_danmaku_compressed/case_004.mp4" type="video/mp4"/>
+</video>
+</div>
+
+<div class="item control-item">
+<video controls="" height="100%" id="shopping6" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/shop/case_108.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/shop/case_108.mp4" type="video/mp4"/>
+</video>
+</div>
+
+<div class="item control-item">
+<video controls="" height="100%" id="shopping7" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/shop/generation_maihuo_0902_danmaku_compressed/case_024.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/shop/generation_maihuo_0902_danmaku_compressed/case_024.mp4" type="video/mp4"/>
+</video>
+</div>
+
+<div class="item control-item">
+<video controls="" height="100%" id="shopping8" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/shop/case_034.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/shop/case_034.mp4" type="video/mp4"/>
+</video>
+</div>
+
+
+
+
+</div>
+<div class="columns is-variable is-5 scenario-split">
+<div class="column">
+
+
+<h2 class="title is-3" style="margin-bottom: 1rem;">Video Chatting</h2>
+<div class="content has-text-justified">
+<p class="subtitle">
+          FlowAct-R2 enables natural video chatting with responsive listening, expressive turn-taking, and lifelike avatar behaviors for seamless real-time interaction.
+        </p>
+</div>
+<div class="carousel results-carousel" id="video-chatting-carousel" style="margin: 0 1rem;">
+<div class="item">
+<video controls="" height="100%" id="live1" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/0903_compressed_crf28/GIR-02_crop.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/0903_compressed_crf28/GIR-02_crop.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="item">
+<video controls="" height="100%" id="live3" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/0903_compressed_crf28/chat50_PET-03_20260901_personavoice_v2.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/0903_compressed_crf28/chat50_PET-03_20260901_personavoice_v2.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="item">
+<video controls="" height="100%" id="videochat-emp03" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/20260831/chat50_EMP-03_20260814_chat50fix_audience_faststart.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/20260831/chat50_EMP-03_20260814_chat50fix_audience_faststart.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="item">
+<video controls="" height="100%" id="live4" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/0903_compressed_crf28/chat50_TRN-04_20260901_personavoice_v2.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/0903_compressed_crf28/chat50_TRN-04_20260901_personavoice_v2.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="item">
+<video controls="" height="100%" id="live5" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/0903/EMP-02_crop_compressed_faststart.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/0903/EMP-02_crop_compressed_faststart.mp4" type="video/mp4"/>
+</video>
+</div>
+</div>
+</div>
+<div class="column">
+
+<h2 class="title is-3" style="margin-bottom: 1rem;">Live Vlogging</h2>
+<div class="content has-text-justified">
+<p class="subtitle">
+          FlowAct-R2 supports vlog streams with multi-scene switching and audience-driven branching, allowing live viewer inputs to steer the next scenario and action.
+        </p>
+</div>
+<div class="carousel results-carousel" id="gaming-carousel" style="margin: 0 1rem;">
+<div class="item">
+<video controls="" height="100%" id="live2" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/0903_compressed_crf28/TRV-03_crop.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/0903_compressed_crf28/TRV-03_crop.mp4" type="video/mp4"/>
+</video>
+</div>
+
+<div class="item control-item">
+<video controls="" height="100%" id="gaming1" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/IG/EDU-HIS-v1-fxwalk.jpg?v=20260904_poster">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/IG/EDU-HIS-v1-fxwalk.mp4" type="video/mp4"/>
+</video>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+<h2 class="title is-3" style="margin-top: 4rem;">Comparing to Vidu-S1</h2>
+
+
+
+
+
+
+
+
+
+<div class="content has-text-justified">
+<p class="subtitle">
+        Enabled by the planning capabilities of its proactive agent, FlowAct-R2 delivers clearer videos, more natural and expressive motions, stronger action responsiveness, and more accurate, contextually appropriate dialogue than Vidu-S1, achieving GSB scores of +54.76% for video quality and +40.48% for real-time interaction in human evaluations, whereas Vidu-S1 is comparatively static and may introduce unrelated conversational memory.
+      </p>
+</div>
+
+<div class="carousel results-carousel comparison-carousel" id="sota-video-carousel">
+<div class="item comparison-item">
+<div class="columns is-mobile is-variable is-3 comparison-pair">
+<div class="column comparison-method">
+<div class="comparison-method-label">FlowAct-R2</div>
+<video controls="" height="100%" id="sota-ours-01" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/ours/01_TRN-04_Q6_ours.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/ours/01_TRN-04_Q6_ours.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="column comparison-method">
+<div class="comparison-method-label">Vidu-S1</div>
+<video controls="" height="100%" id="sota-vidu-01" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/vidu/01_TRN-04_Q6_vidu.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/vidu/01_TRN-04_Q6_vidu.mp4" type="video/mp4"/>
+</video>
+</div>
+</div>
+</div>
+<div class="item comparison-item">
+<div class="columns is-mobile is-variable is-3 comparison-pair">
+<div class="column comparison-method">
+<div class="comparison-method-label">FlowAct-R2</div>
+<video controls="" height="100%" id="sota-ours-02" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/ours/02_TRV-03_Q1-Q3_ours.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/ours/02_TRV-03_Q1-Q3_ours.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="column comparison-method">
+<div class="comparison-method-label">Vidu-S1</div>
+<video controls="" height="100%" id="sota-vidu-02" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/vidu/02_TRV-03_Q1-Q3_vidu.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/vidu/02_TRV-03_Q1-Q3_vidu.mp4" type="video/mp4"/>
+</video>
+</div>
+</div>
+</div>
+<div class="item comparison-item">
+<div class="columns is-mobile is-variable is-3 comparison-pair">
+<div class="column comparison-method">
+<div class="comparison-method-label">FlowAct-R2</div>
+<video controls="" height="100%" id="sota-ours-03" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/ours/03_PET-03_Q3-Q4_ours.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/ours/03_PET-03_Q3-Q4_ours.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="column comparison-method">
+<div class="comparison-method-label">Vidu-S1</div>
+<video controls="" height="100%" id="sota-vidu-03" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/vidu/03_PET-03_Q3-Q4_vidu.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/vidu/03_PET-03_Q3-Q4_vidu.mp4" type="video/mp4"/>
+</video>
+</div>
+</div>
+</div>
+<div class="item comparison-item">
+<div class="columns is-mobile is-variable is-3 comparison-pair">
+<div class="column comparison-method">
+<div class="comparison-method-label">FlowAct-R2</div>
+<video controls="" height="100%" id="sota-ours-04" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/ours/04_MKT-04_Q5_ours.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/ours/04_MKT-04_Q5_ours.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="column comparison-method">
+<div class="comparison-method-label">Vidu-S1</div>
+<video controls="" height="100%" id="sota-vidu-04" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/vidu/04_MKT-04_Q5_vidu.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/vidu/04_MKT-04_Q5_vidu.mp4" type="video/mp4"/>
+</video>
+</div>
+</div>
+</div>
+<div class="item comparison-item">
+<div class="columns is-mobile is-variable is-3 comparison-pair">
+<div class="column comparison-method">
+<div class="comparison-method-label">FlowAct-R2</div>
+<video controls="" height="100%" id="sota-ours-05" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/ours/05_MKT-04_Q7_ours.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/ours/05_MKT-04_Q7_ours.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="column comparison-method">
+<div class="comparison-method-label">Vidu-S1</div>
+<video controls="" height="100%" id="sota-vidu-05" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/vidu/05_MKT-04_Q7_vidu.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/vidu/05_MKT-04_Q7_vidu.mp4" type="video/mp4"/>
+</video>
+</div>
+</div>
+</div>
+<div class="item comparison-item">
+<div class="columns is-mobile is-variable is-3 comparison-pair">
+<div class="column comparison-method">
+<div class="comparison-method-label">FlowAct-R2</div>
+<video controls="" height="100%" id="sota-ours-06" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/ours/06_MKT-05_Q1_ours.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/ours/06_MKT-05_Q1_ours.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="column comparison-method">
+<div class="comparison-method-label">Vidu-S1</div>
+<video controls="" height="100%" id="sota-vidu-06" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/vidu/06_MKT-05_Q1_vidu.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/vidu/06_MKT-05_Q1_vidu.mp4" type="video/mp4"/>
+</video>
+</div>
+</div>
+</div>
+<div class="item comparison-item">
+<div class="columns is-mobile is-variable is-3 comparison-pair">
+<div class="column comparison-method">
+<div class="comparison-method-label">FlowAct-R2</div>
+<video controls="" height="100%" id="sota-ours-07" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/ours/07_CSV-01_Q4_ours.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/ours/07_CSV-01_Q4_ours.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="column comparison-method">
+<div class="comparison-method-label">Vidu-S1</div>
+<video controls="" height="100%" id="sota-vidu-07" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/vidu/07_CSV-01_Q4_vidu.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/vidu/07_CSV-01_Q4_vidu.mp4" type="video/mp4"/>
+</video>
+</div>
+</div>
+</div>
+<div class="item comparison-item">
+<div class="columns is-mobile is-variable is-3 comparison-pair">
+<div class="column comparison-method">
+<div class="comparison-method-label">FlowAct-R2</div>
+<video controls="" height="100%" id="sota-ours-08" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/ours/08_CSV-04_Q4-Q5_ours.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/ours/08_CSV-04_Q4-Q5_ours.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="column comparison-method">
+<div class="comparison-method-label">Vidu-S1</div>
+<video controls="" height="100%" id="sota-vidu-08" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/vidu/08_CSV-04_Q4-Q5_vidu.jpg">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-clean-20260911/static/videos/videochat/comp/marked_showcase_20260904/vidu/08_CSV-04_Q4-Q5_vidu.mp4" type="video/mp4"/>
+</video>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="BibTeX">
+<div class="container is-max-desktop content">
+<h2 class="title">BibTeX</h2>
+<pre><code>
+@article{2026flowact-R2,
+  title={FlowAct-R2: },
+  author={},
+  journal={arXiv preprint arXiv:},
+  year={2026}
+}      
+      
+@article{wang2026flowact,
+  title={FlowAct-R1: Towards Interactive Humanoid Video Generation},
+  author={Wang, Lizhen and Zhu, Yongming and Ge, Zhipeng and Zheng, Youwei and Zhang, Longhao and Hu, Tianshu and Qin, Shiyang and Luo, Mingshuang and Zhang, Jiaxu and Chen, Xin and others},
+  journal={arXiv preprint arXiv:2601.10103},
+  year={2026}
+}
+
+@article{zhu2024infp,
+  title={INFP: Audio-driven interactive head generation in dyadic conversations},
+  author={Zhu, Yongming and Zhang, Longhao and Rong, Zhengkun and Hu, Tianshu and Liang, Shuang and Ge, Zhipeng},
+  journal={arXiv preprint arXiv:2412.04037},
+  year={2024}
+}
+</code></pre>
+</div>
+</section>
+<footer class="footer">
+<div class="container">
+<div class="columns is-centered">
+<div class="column is-8">
+<div class="content">
+<h2 class="title is-4">Ethics Concerns</h2>
+<p>
+            All human images used in our demonstrations were generated by AI tools, and are intended solely to showcase the capabilities of this research. Please contact us (luoyuxuan@bytedance.com) if there are any concerns, and we will delete it in time.
+          </p>
+<h2 class="title is-4">Acknowledgement</h2>
+<p>
+            We would like to thank  <a href="https://nerfies.github.io/">Nerfies</a> for providing the website template.
+          </p>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</body>
+</html>
+
