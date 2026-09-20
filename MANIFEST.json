@@ -353,6 +353,11 @@
       "sha256": "fcef0d4ab62ca589cfc1c7030da4f604be91740a8673eb63803195ee7bcf8817"
     },
     {
+      "path": "static/videos/shop/generation_maihuo_0902_danmaku_compressed/case_024_first_frame.jpg",
+      "bytes": 102230,
+      "sha256": "d7b35994456af5a3de1e7fb093296e00d22dd8efe6496a93473e23ec7571e60c"
+    },
+    {
       "path": "static/videos/shop/generation_maihuo_0902_danmaku_compressed/case_024.mp4",
       "bytes": 48000612,
       "sha256": "c9e87deb4c8698100aa64c38e5a96908902ebaf77948f52809a00bd966be1e13"
@@ -651,6 +656,16 @@
       "path": "static/videos/vidu-s2-comp/image_reference_eval_cases_20260915_with_product_refs/04_case_108/rtc-997707938619473920-1789543699407_with_product_refs.mp4",
       "bytes": 7092963,
       "sha256": "a245f7f58060f3014f99f7ad65126a13c085f0afd548e349363f8707740de432"
+    },
+    {
+      "path": "static/videos/vidu-s2-comp/image_reference_eval_cases_20260915_with_product_refs/07_case_024/07_case_024_first_image_with_product_ref.mp4",
+      "bytes": 12001867,
+      "sha256": "48ec2bf3a156fcff027588dc11cd8f547ea9df2f0a1a12483e1280b15037d505"
+    },
+    {
+      "path": "static/videos/vidu-s2-comp/image_reference_eval_cases_20260915_with_product_refs/07_case_024/07_case_024_first_image_with_product_ref_first_frame.jpg",
+      "bytes": 83450,
+      "sha256": "ca5d835b2bc3e26afce7fd799d919aeef074e6bd444451c10b7ff37ba7fd19ad"
     },
     {
       "path": "static/videos/vidu-s2-comp/image_reference_eval_cases_20260915_with_product_refs/07_case_024/rtc-997708579890794496-1789543866428_with_product_refs.jpg",
