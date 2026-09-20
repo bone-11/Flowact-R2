@@ -2,6 +2,11 @@ window.HELP_IMPROVE_VIDEOJS = false;
 
 var POSTER_CACHE_VERSION = '20260903_case085_poster';
 
+// #region debug-point shared:reporter
+function reportVideoSeekDebug(hypothesisId, location, msg, data) {
+    fetch('http://10.37.198.211:7777/event', { method: 'POST', body: JSON.stringify({ sessionId: 'video-seek-failure', runId: 'post-fix', hypothesisId: hypothesisId, location: location, msg: '[DEBUG] ' + msg, data: data, ts: Date.now() }) }).catch(function() {});
+}
+// #endregion
 var INTERP_BASE = "./static/interpolation/stacked";
 var NUM_INTERP_FRAMES = 240;
 
@@ -50,6 +55,16 @@ function hydrateVideo(video) {
     }
     video.load();
 
+    // #region debug-point A,D:hydrate
+    var debugSourceUrl = sources[0] && sources[0].src;
+    reportVideoSeekDebug('D', 'static/js/index.js:hydrateVideo', 'Video hydrated', { id: video.id, source: debugSourceUrl, readyState: video.readyState, networkState: video.networkState });
+    if (debugSourceUrl) {
+        fetch(debugSourceUrl, { headers: { Range: 'bytes=0-1' } }).then(function(response) {
+            if (response.body) response.body.cancel().catch(function() {});
+            reportVideoSeekDebug('A', 'static/js/index.js:hydrateVideo', 'Video range probe', { id: video.id, source: debugSourceUrl, status: response.status, acceptRanges: response.headers.get('accept-ranges'), contentRange: response.headers.get('content-range'), contentLength: response.headers.get('content-length') });
+        }).catch(function(error) { reportVideoSeekDebug('A', 'static/js/index.js:hydrateVideo', 'Video range probe failed', { id: video.id, source: debugSourceUrl, error: String(error) }); });
+    }
+    // #endregion
 }
 
 function playVideo(video) {
@@ -97,7 +112,24 @@ function setupLazyVideos() {
             shell.appendChild(playButton);
         }
 
+        // #region debug-point C:pointer-events
+        ['pointerdown', 'pointerup'].forEach(function(eventName) {
+            video.addEventListener(eventName, function(event) {
+                var rect = video.getBoundingClientRect();
+                reportVideoSeekDebug('C', 'static/js/index.js:observeVideo', 'Video pointer event', { id: video.id, event: eventName, xRatio: rect.width ? (event.clientX - rect.left) / rect.width : null, yRatio: rect.height ? (event.clientY - rect.top) / rect.height : null, defaultPrevented: event.defaultPrevented });
+            }, true);
+        });
+        // #endregion
 
+        // #region debug-point B,D,E:media-state
+        ['loadedmetadata', 'progress', 'seeking', 'seeked', 'error'].forEach(function(eventName) {
+            video.addEventListener(eventName, function() {
+                var ranges = [];
+                for (var i = 0; i < video.seekable.length; i++) ranges.push([video.seekable.start(i), video.seekable.end(i)]);
+                reportVideoSeekDebug(eventName === 'error' ? 'E' : 'B,D', 'static/js/index.js:observeVideo', 'Video media state', { id: video.id, event: eventName, source: video.currentSrc, duration: video.duration, currentTime: video.currentTime, readyState: video.readyState, networkState: video.networkState, seekable: ranges, errorCode: video.error && video.error.code, h264: video.canPlayType('video/mp4; codecs="avc1.42E01E"'), hevc: video.canPlayType('video/mp4; codecs="hvc1"') });
+            });
+        });
+        // #endregion
     }
 
     function currentVideos() {
@@ -285,7 +317,7 @@ onReady(function() {
         slidesToScroll: 1,
     });
 
-    attachCarousel('#sota-video-carousel', {
+    attachCarousel('.comparison-carousel', {
         ...carouselOptions,
         slidesToShow: 2,
         slidesToScroll: 2,

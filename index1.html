@@ -86,46 +86,22 @@
 <h1 class="title is-2 publication-title" style="display: inline-block; text-align: center;">
 <img alt="FlowAct-R2 Logo" class="img-responsive" src="./static/images/logo-r2.png" style="height: 1.1em; width: auto; vertical-align: middle; display: inline-block;"/>
 
-
-<span style="vertical-align: middle;">: Beyond Talking Avatar via Streaming Multimodal References and Proactive Agent Planning</span>
+<span style="vertical-align: middle;">: Live Humanoid Video Stream Generation with Streaming Multimodal References and Proactive Agent</span>
 </h1>
 
 <div class="is-size-5 publication-authors">
-<span class="author-block">
-<a href="">Ziyao Huang</a><sup>*</sup>,
-            </span>
-<span class="author-block">
-<a href="">Zhengkun Rong</a><sup>*</sup>,
-            </span>
-<span class="author-block">
-<a href="">Shiyang Qin</a><sup>*</sup>,
-            </span>
-<span class="author-block">
-<a href="">Shuang Liang</a><sup>*</sup>,
-            </span>
-<span class="author-block">
-<a href="">Wentao Hu</a><sup>*</sup>,
-            </span>
 
 
 
-<span class="author-block">
-<a href="">Yuxuan Luo</a><sup>*†</sup>,
-            </span>
-<span class="author-block">
-<a href="">Yuan Zhang</a>,
-            </span>
-<span class="author-block">
-<a href="">Mingyuan Gao</a>
-</span>
+
+
+
+
 </div>
 <div class="is-size-5 publication-authors">
 <span class="author-block">Bytedance Intelligent Creation</span>
 </div>
-<div class="is-size-5 publication-authors">
-<span class="eql-cntrb"><small><sup>*</sup>Core Contributors</small></span>
-<span class="eql-cntrb"><small><sup>†</sup>Corresponding Author</small></span>
-</div>
+
 <div class="column has-text-centered">
 <div class="publication-links">
 
@@ -166,6 +142,11 @@
 </h2>
 <div class="columns results-carousel" id="results-carousel">
 <div class="column">
+<video controls="" height="100%" id="teaser1" loop="" playsinline="">
+<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-project-clean-20260920/static/videos/videochat/P0_talk_1_s2s_roleplay_20260820_v26_more_human_empathy_sophie_bgm010_20260826_faststart.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="column">
 <video controls="" height="100%" id="teaser2" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-project-clean-20260920/static/videos/entertainment_final_danmaku_only/nono_20260624_185701_647_withrefaudio_faststart.jpg?v=20260907">
 <source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-project-clean-20260920/static/videos/entertainment_final_danmaku_only/dance_copyright_clean_20260914/teaser/nono_with_aigc_refs.mp4" type="video/mp4"/>
 </video>
@@ -178,11 +159,6 @@
 <div class="column">
 <video controls="" height="100%" id="teaser4" loop="" playsinline="" poster="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-project-clean-20260920/static/videos/IG/r2_audience_danmaku_compressed_crf28/vlog_shichahai_v5_online_20260812_011014.jpg?v=20260907">
 <source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-project-clean-20260920/static/videos/teaser/teaser_with_refs_20260907/vlog_shichahai_v5_online_20260812_011014_withrefs.mp4" type="video/mp4"/>
-</video>
-</div>
-<div class="column">
-<video controls="" height="100%" id="teaser1" loop="" playsinline="">
-<source data-src="https://avatar-agent.tos-cn-beijing.volces.com/flowact-r2-project-clean-20260920/static/videos/videochat/P0_talk_1_s2s_roleplay_20260820_v26_more_human_empathy_sophie_bgm010_20260826_faststart.mp4" type="video/mp4"/>
 </video>
 </div>
 </div>
@@ -200,19 +176,30 @@
 <h2 class="title is-4">Method Overview</h2>
 <img alt="Interpolate start reference image." class="interpolation-image" src="./static/images/method_v10.png" style="max-width: 100%; height: auto;">
 <div class="content has-text-justified">
-<p></p>
+<p>
+          Overview of <span class="dnerf">FlowAct-R2</span>. 
+          FlowAct-R2 enables proactive, lifelike humanoid video generation by coupling a two-stage proactive agent with a streaming multi-reference DiT. The agent pre-plans long-horizon agendas and reusable multimodal skills offline, and dynamically orchestrates online responses, tool execution, and real-time interruptions. Conditioned on rolling action prompts and streaming audio, the generative backbone incorporates video-driven RoPE and an explicitly trained (R+I)2V multi-reference mechanism—supporting dynamic image, audio, and video references to suppress cumulative drift and synthesize high-fidelity 720p avatar videos in real time.
+          
+
+</p>
+<h3 class="title is-5" style="margin-top: 1.5rem;">Streaming Multimoal Reference DiT</h3>
 <p class="subtitle">
-            FlowAct-R2 introduces a <strong>Streaming Multimodal Reference DiT</strong> for streaming digital human video generation, built by adapting the pretrained Seedance 2.0 Mini reference-to-video backbone. By extending Diffusion Forcing to streaming multimodal references, the model continuously incorporates rolling action prompts, audio, and dynamically updated image, audio, and video references while preserving bidirectional spatiotemporal modeling. A video-driven RoPE aligns incoming reference chunks with the generation timeline, enabling references to be updated or switched during an ongoing stream. FlowAct-R2 further combines explicitly trained reference-plus-image conditioning with partially noised historical motion frames to preserve identity and appearance while reducing error accumulation. 
+            Existing streaming video generation methods are typically adapted from image-to-video (I2V) or text-to-video (T2V) models, limiting their ability to incorporate dynamically evolving references and often requiring substantial architectural modifications for long-horizon consistency. However, interactive digital humans demand continuous multimodal control across diverse scenarios, such as e-commerce livestreaming, talent performances, and scene exploration.
           </p>
 <p class="subtitle">
-            Complementing the video generator, the <strong>Proactive Interaction Agent</strong> enables a digital human to proactively sustain a live session while remaining responsive to audience interactions. Offline, the agent derives a persona from multimodal character assets, organizes the session into a long-horizon agenda, and compiles complex behaviors into reusable multimodal skills. Online, it combines the prepared agenda and skills with audience events and summarized interaction history to determine what behavior to perform and how it should be scheduled. By initiating, overlaying, deferring, interrupting, or resuming behaviors according to the current context, the digital human can continue purposeful activities without continuous user prompts while responding naturally when new interactions arise.
+            We present FlowAct-R2, a streaming adaptation of Seedance 2.0 Mini designed for interactive digital humans. Rather than augmenting an I2V model with attention sinks, FlowAct-R2 builds directly on a pre-trained reference-to-video (R2V) backbone, inheriting its strong reference preservation capability. We employ Diffusion Forcing to enable autoregressive streaming inference while preserving the backbone and its bidirectional spatiotemporal attention. We further extend Diffusion Forcing to streaming multimodal reference generation, allowing image, audio, and video references, together with text prompts, to be continuously updated or switched during inference. A modified RoPE aligns incoming reference chunks with the corresponding generation timeline, ensuring temporally synchronized control.
+          </p>
+<p class="subtitle">
+            The strong reference conditioning of the R2V backbone already substantially reduces autoregressive drift by continuously anchoring generation to the reference content. To further suppress residual error accumulation, we condition the model on partially noised historical motion frames rather than clean ones, improving its robustness to imperfect generated histories. Specialized audio-driven training enhances synchronization among speech, lip movements, expressions, and head poses, while coarse-to-fine inference progressively restores visual details. Together, these designs enable stable, hour-long, real-time 720p digital human generation under continuous multimodal control.
           </p>
 
-
-
-
-
-
+<h3 class="title is-5" style="margin-top: 1.5rem;">Proactive Interaction Agent</h3>
+<p class="subtitle">
+            Proactivity in a streaming digital human extends beyond generating timely responses to user inputs: the digital human must continuously determine what to do next, even in the absence of explicit instructions, while maintaining a coherent persona and pursuing the long-term objectives of the live session. This creates a fundamental tension between long-horizon preparation and online adaptation. Purely online planning is often too myopic and latency-sensitive to organize an entire session or synthesize complex behaviors on demand, whereas a fixed offline script cannot accommodate unpredictable audience interactions or evolving contexts.
+          </p>
+<p class="subtitle">
+            FlowAct-R2 therefore adopts a two-stage agent architecture. Offline, it derives a persona from multimodal character assets, organizes the session into a long-horizon agenda, and compiles complex behaviors into reusable skills. Online, a scheduling agent integrates the agenda, interaction events, and historical context to determine when to initiate, overlay, defer, interrupt, or resume behaviors, while invoking the appropriate skills for execution. This design enables the digital human to autonomously sustain the live session while remaining responsive to interactions.
+        </p>
 </div>
 </img></div>
 
@@ -697,11 +684,11 @@
 <div class="container is-max-desktop content">
 <h2 class="title">BibTeX</h2>
 <pre><code>
-@online{2026flowact-R2,
-  title={FlowAct-R2: Beyond Talking Avatar via Streaming Multimodal References and Proactive Agent Planning},
-  author={Ziyao Huang, Zhengkun Rong, Shiyang Qin, Shuang Liang, Wentao Hu, Yuxuan Luo, Yuan Zhang, Mingyuan Gao},
-  year={2026},
-  url={https://project-page.com},
+@article{2026flowact-R2,
+  title={FlowAct-R2: },
+  author={},
+  journal={arXiv preprint arXiv:},
+  year={2026}
 }      
       
 @article{wang2026flowact,

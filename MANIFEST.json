@@ -1,48 +1,51 @@
 {
-  "entry": "index.html",
-  "source_index_sha256": "0cd0e3fc5e637952f65722d14b1b1165f56d671c73c546373688a6234abd34de",
-  "video_elements": 50,
-  "unique_video_files": 50,
+  "pages": [
+    "index.html",
+    "index1.html",
+    "index_blog.html",
+    "index_bytedance_blog.html"
+  ],
+  "unique_videos": 55,
   "external_urls": [
     "https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css",
     "https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro",
-    "https://grisoon.github.io/FlowAct-R1/",
-    "https://grisoon.github.io/INFP/",
-    "https://grisoon.github.io/PersonaTalk/",
-    "https://nerfies.github.io/"
+    "https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"
   ],
-  "downloaded_dependencies": {
-    "static/webfonts/fa-brands-400.eot": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/webfonts/fa-brands-400.eot",
-    "static/webfonts/fa-brands-400.woff2": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/webfonts/fa-brands-400.woff2",
-    "static/webfonts/fa-brands-400.woff": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/webfonts/fa-brands-400.woff",
-    "static/webfonts/fa-brands-400.ttf": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/webfonts/fa-brands-400.ttf",
-    "static/webfonts/fa-brands-400.svg": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/webfonts/fa-brands-400.svg",
-    "static/webfonts/fa-regular-400.eot": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/webfonts/fa-regular-400.eot",
-    "static/webfonts/fa-regular-400.woff2": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/webfonts/fa-regular-400.woff2",
-    "static/webfonts/fa-regular-400.woff": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/webfonts/fa-regular-400.woff",
-    "static/webfonts/fa-regular-400.ttf": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/webfonts/fa-regular-400.ttf",
-    "static/webfonts/fa-regular-400.svg": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/webfonts/fa-regular-400.svg",
-    "static/webfonts/fa-solid-900.eot": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/webfonts/fa-solid-900.eot",
-    "static/webfonts/fa-solid-900.woff2": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/webfonts/fa-solid-900.woff2",
-    "static/webfonts/fa-solid-900.woff": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/webfonts/fa-solid-900.woff",
-    "static/webfonts/fa-solid-900.ttf": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/webfonts/fa-solid-900.ttf",
-    "static/webfonts/fa-solid-900.svg": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/webfonts/fa-solid-900.svg"
-  },
   "files": [
     {
       "path": "README.md",
-      "bytes": 1790,
-      "sha256": "a7e6a46f74ec8e0b2082913a261ac517aded3fff556760bba3324f8601b84347"
+      "bytes": 538,
+      "sha256": "195c13e11d7d19ee03380d442306e8f728691d171241f7e1fa6db954956fb8da"
     },
     {
       "path": "index.html",
-      "bytes": 29834,
-      "sha256": "330a7cb12b0a8c72184134d603fca72bb85332d9b1e1034496d338849043e779"
+      "bytes": 32571,
+      "sha256": "da3ee12569fbd0f2d503baa5736f393150395dc0ef1345d698c7538a8d249105"
+    },
+    {
+      "path": "index1.html",
+      "bytes": 34094,
+      "sha256": "b581c1db3f1663480e4bd22b6256593f0e99cd7899142dc10af9922a397cacf3"
+    },
+    {
+      "path": "index_blog.html",
+      "bytes": 56426,
+      "sha256": "cb60d1fc9422564b1b4bb641cc44732963bbebac84054f2cef1c2f159e36adef"
+    },
+    {
+      "path": "index_bytedance_blog.html",
+      "bytes": 56380,
+      "sha256": "77ff109da5c243589cd59140103252c58f3e4dde4bd83af50a22faa669a1e0f2"
     },
     {
       "path": "serve.py",
       "bytes": 3216,
       "sha256": "b4b60cbfcd256d43e4656c7d10910f3ce70f2325d501b400646610e8e977a27a"
+    },
+    {
+      "path": "static/css/blog.css",
+      "bytes": 14296,
+      "sha256": "090198d4a0979d648e3508fe8551d289b62b3f40248e6a19095f1a6e9918ab4a"
     },
     {
       "path": "static/css/bulma-carousel.min.css",
@@ -60,14 +63,24 @@
       "sha256": "58b28659220961ead137cb5b346b5759562750ce703094d70fc786e0db467033"
     },
     {
+      "path": "static/css/bytedance-blog.css",
+      "bytes": 8723,
+      "sha256": "733c164ef3e58bfdecba2044aac022051fe4830f0577d883199594a4789a9820"
+    },
+    {
       "path": "static/css/fontawesome.all.min.css",
       "bytes": 59344,
       "sha256": "af1e6edc875a382b338bb25bd7c5c3f474a7f1b36212002a5896dd06f2186325"
     },
     {
       "path": "static/css/index.css",
-      "bytes": 7486,
-      "sha256": "e47e7410eb42410258959d23a6d7544539879410fdd08995a2e489320f6b204c"
+      "bytes": 7581,
+      "sha256": "d80c42f0bfdaf40abfe5c95aa7b90f2a533109bf8c845e49d2c21f7aafa14344"
+    },
+    {
+      "path": "static/fonts/inter-latin-wght-normal.woff2",
+      "bytes": 48256,
+      "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
     },
     {
       "path": "static/images/logo-r2.png",
@@ -83,6 +96,11 @@
       "path": "static/images/teaser_v5.png",
       "bytes": 10566459,
       "sha256": "3b3597aa350efc5e4e59c367d498e52f69800fda2dc92c4c4e401bdb1c2f7c2d"
+    },
+    {
+      "path": "static/js/blog.js",
+      "bytes": 5932,
+      "sha256": "7267789e8aee36423250b4341a4971905c48a678be73ba0206e2800b8bc8171b"
     },
     {
       "path": "static/js/bulma-carousel.min.js",
@@ -101,18 +119,28 @@
     },
     {
       "path": "static/js/index.js",
-      "bytes": 10256,
-      "sha256": "9b7a01341d00df725f2a8c83ad002aaed923d5678d0a3c8673f97df65a659fcd"
+      "bytes": 13181,
+      "sha256": "27ea471b963d63697cc5b04c28f612485b85aad26e1b6f20e823df5415f68f20"
     },
     {
-      "path": "static/videos/IG/EDU-HIS-v1-fxwalk.jpg",
-      "bytes": 100833,
-      "sha256": "ee6f6c3e08a1a0469dd7c8728d523cd92d09d5b9cf4ad37946bd8eaff2965b51"
+      "path": "static/videos/IG/20260911_danmaku/EDU-HIS-v1-fxwalk-interactive-v4b-scenehold_20260904_manualfix_v1_bgm018_speechfit_useredit1_danmaku.jpg",
+      "bytes": 135641,
+      "sha256": "f991ef9fbde7eebb27d63e2981b5ddcd65eeb7c581ef237322679fb1723addec"
     },
     {
-      "path": "static/videos/IG/EDU-HIS-v1-fxwalk.mp4",
-      "bytes": 44658807,
-      "sha256": "264d02ebc48656c1c75e75b5fd395788b6358a39138a2e866f2c1d517796d199"
+      "path": "static/videos/IG/20260911_danmaku/EDU-HIS-v1-fxwalk-interactive-v4b-scenehold_20260904_manualfix_v1_bgm018_speechfit_useredit1_danmaku.mp4",
+      "bytes": 46463824,
+      "sha256": "03339299f83dbe3ea225e3b96a36d9cd0b9ca0a357d8363a89483237cf7cee18"
+    },
+    {
+      "path": "static/videos/IG/20260911_danmaku/GAME-GAL-XIANSHI-scenehold-v3b_20260904_manualfix_v1_bgm018_speechfit_scene3gpt2v3_useredit1_danmaku.jpg",
+      "bytes": 110902,
+      "sha256": "6af88c4d838dce6ae23faba52f016e26a4c5d868ebe1809cf84c1d181390974d"
+    },
+    {
+      "path": "static/videos/IG/20260911_danmaku/GAME-GAL-XIANSHI-scenehold-v3b_20260904_manualfix_v1_bgm018_speechfit_scene3gpt2v3_useredit1_danmaku.mp4",
+      "bytes": 38462721,
+      "sha256": "e6de378c46d32ac9d21dd198eef25fe3784bb6896d0331c6aea3a098215cb381"
     },
     {
       "path": "static/videos/IG/r2_audience_danmaku_compressed_crf28/vlog_shichahai_v5_online_20260812_011014.jpg",
@@ -145,9 +173,29 @@
       "sha256": "35288f14b4e47f3fea9d5cc71e301cd80cb4c385fe85d9b0774c66f1d7fda1b7"
     },
     {
-      "path": "static/videos/entertainment_final_danmaku_only/dance2_faststart.mp4",
-      "bytes": 24333568,
-      "sha256": "97ae8208f47706f8d57d7ec68542cee67bbf21ca23996afc7bfd1a2c8436be62"
+      "path": "static/videos/entertainment_final_danmaku_only/dance_copyright_clean_20260914/teaser/nono_with_aigc_refs.mp4",
+      "bytes": 70885752,
+      "sha256": "aabf5466f6fe7a6ebf8036912601a5c8154871b984a291ccb7956266023eca3c"
+    },
+    {
+      "path": "static/videos/entertainment_final_danmaku_only/dance_copyright_clean_20260914/videos/01_dance2.mp4",
+      "bytes": 24301306,
+      "sha256": "5d56a2311be7d1c8cdc6387ee9cffe80f97c66a48def850e011652f0d9752cb6"
+    },
+    {
+      "path": "static/videos/entertainment_final_danmaku_only/dance_copyright_clean_20260914/videos/03_qiaopixiaoyima.mp4",
+      "bytes": 54271453,
+      "sha256": "888b107a543d3f28ade8fdc7427f724d8f7f9e4a2023237a244bc2cdc2cb98d1"
+    },
+    {
+      "path": "static/videos/entertainment_final_danmaku_only/dance_copyright_clean_20260914/videos/04_yizhiyu.mp4",
+      "bytes": 34128171,
+      "sha256": "353f0e4cea28e3f09312237ea218e497ff119f9dcf88ca296bf109d2dd2d231c"
+    },
+    {
+      "path": "static/videos/entertainment_final_danmaku_only/dance_copyright_clean_20260914/videos/05_zhangheyi.mp4",
+      "bytes": 34854568,
+      "sha256": "743e99110c4ad228f0ba616bbeeb1d369f8757e791fbc793ddcb7f1e5d185328"
     },
     {
       "path": "static/videos/entertainment_final_danmaku_only/instrument1_faststart.jpg",
@@ -170,11 +218,6 @@
       "sha256": "6203965f48d5c57979625f806f3648d564aec9d1d279c09221993351fce6ce03"
     },
     {
-      "path": "static/videos/entertainment_final_danmaku_only/qiaopixiaoyima_faststart.mp4",
-      "bytes": 54337572,
-      "sha256": "93d4dbab747d9f67431b73f5198da295615c7aef24d8f7a39b76e32f40214c4b"
-    },
-    {
       "path": "static/videos/entertainment_final_danmaku_only/sing1_faststart.jpg",
       "bytes": 56222,
       "sha256": "960f4ecaf541ec1f9402baa9e7d4d9a4921fe46be03d2ca89c11d4fc81350925"
@@ -190,19 +233,9 @@
       "sha256": "6ee644f6bc2c25f4c3d044175d83781151fb71e6c9a9627f13797ef4d7a2cdfe"
     },
     {
-      "path": "static/videos/entertainment_final_danmaku_only/yizhiyu_faststart.mp4",
-      "bytes": 34159452,
-      "sha256": "0b807c227881e107a4f1cae5b038b34f0e4b015eec4d78a1fb640dcdf8a9d0cf"
-    },
-    {
       "path": "static/videos/entertainment_final_danmaku_only/zhangheyi_faststart.jpg",
       "bytes": 38222,
       "sha256": "fa9141fed0ed400e1650a857514eb80c3029302ef9b707664d20d9e6e6d62af2"
-    },
-    {
-      "path": "static/videos/entertainment_final_danmaku_only/zhangheyi_faststart.mp4",
-      "bytes": 34869971,
-      "sha256": "20892ce06490acc93550c9ff2c0f52d59a5143bf152ef4452ea19e91357dd83b"
     },
     {
       "path": "static/videos/offline_videos_comressed/1.jpg",
@@ -253,16 +286,6 @@
       "path": "static/videos/offline_videos_comressed/5.mp4",
       "bytes": 5417564,
       "sha256": "1234b08e63176afe348efb77dd413938e4bc1dfaf8368ddcbeb3e304eb272621"
-    },
-    {
-      "path": "static/videos/offline_videos_comressed/8.jpg",
-      "bytes": 37225,
-      "sha256": "6e87bfbe5e3fb06e04cdf4efd2c28371fe7531cb27086a52bc75aafc29b6f15d"
-    },
-    {
-      "path": "static/videos/offline_videos_comressed/8.mp4",
-      "bytes": 20848026,
-      "sha256": "86c9774bff7e32302c80723085dd72574e0dc6a5a7fbe1dc7a2381aba652dd7b"
     },
     {
       "path": "static/videos/offline_videos_comressed/9.jpg",
@@ -363,11 +386,6 @@
       "path": "static/videos/teaser/teaser_with_refs_20260907/case_004_005_006_crop1_comp_danmaku_withrefs.mp4",
       "bytes": 121011685,
       "sha256": "51339391ae41a70804f7fef1eb900be18ec390b06ebbef1530c9125ec8750b69"
-    },
-    {
-      "path": "static/videos/teaser/teaser_with_refs_20260907/nono_20260624_185701_647_withrefaudio_withrefs.mp4",
-      "bytes": 72200388,
-      "sha256": "3783144f41e36c6beb1a46524f381363346a72763cd1edd11a1292338e3d074d"
     },
     {
       "path": "static/videos/teaser/teaser_with_refs_20260907/vlog_shichahai_v5_online_20260812_011014_withrefs.mp4",
@@ -605,29 +623,54 @@
       "sha256": "008a2f7e2ea0a787b0cf23e0a09d942a66df6cb4efb5b91b10986665380a3f0e"
     },
     {
-      "path": "static/webfonts/LICENSE.txt",
-      "bytes": 1548,
-      "sha256": "e779748dfe75e84f974df3c7bc07f842011a100159158b0f1f49b2f2a5a515cb"
+      "path": "static/videos/vidu-s2-comp/dance_action_library_all_cases_no_nono_20260916/P0_dance_2_custom_action_clone_voice_no_bgm_hd.jpg",
+      "bytes": 88370,
+      "sha256": "10b1b1bf01ae32aea337d48de77d9b167f44356b6fe0de2dcbe460a2921e479d"
     },
     {
-      "path": "static/webfonts/fa-brands-400.eot",
-      "bytes": 136822,
-      "sha256": "6128dd44fed3a046ff8d835d677e0a837c70c64dc1c944b7edfde04eb8d8b879"
+      "path": "static/videos/vidu-s2-comp/dance_action_library_all_cases_no_nono_20260916/P0_dance_2_custom_action_clone_voice_no_bgm_hd.mp4",
+      "bytes": 10220438,
+      "sha256": "2de1ae05bc0c04098b75ff73665349594aa6ef223cb373a2df7ebe9f5db173fd"
     },
     {
-      "path": "static/webfonts/fa-brands-400.svg",
-      "bytes": 747545,
-      "sha256": "e2749cb24a77208abdd9fda35f0d14f091948c44d21f977c8048a3b13e4beccb"
+      "path": "static/videos/vidu-s2-comp/image_reference_eval_cases_20260915_with_product_refs/01_case_004_005_006_crop1_comp_danmaku_withrefs/rtc-997660459551166464-1789532435952_with_product_refs.jpg",
+      "bytes": 102761,
+      "sha256": "e7d81063aeb32f176acad5b797cf592247d2dbd5fd3165e2456d32c16940d288"
     },
     {
-      "path": "static/webfonts/fa-brands-400.ttf",
-      "bytes": 136516,
-      "sha256": "404d6083193e569bc5c28c7b1bc0e13ece80c6e0f5a50ad8e9633f48f3c09155"
+      "path": "static/videos/vidu-s2-comp/image_reference_eval_cases_20260915_with_product_refs/01_case_004_005_006_crop1_comp_danmaku_withrefs/rtc-997660459551166464-1789532435952_with_product_refs.mp4",
+      "bytes": 15073440,
+      "sha256": "62892eb959873caebc9e17ab6f69ffb410e8aefe4553c6fa3881031ce6332076"
     },
     {
-      "path": "static/webfonts/fa-brands-400.woff",
-      "bytes": 92136,
-      "sha256": "a0375c054a0041bd58e2a0bf7fa3df7c3904bfc4f790fd24e32ff3ee70fd0eef"
+      "path": "static/videos/vidu-s2-comp/image_reference_eval_cases_20260915_with_product_refs/04_case_108/rtc-997707938619473920-1789543699407_with_product_refs.jpg",
+      "bytes": 109606,
+      "sha256": "35b5eb9a77ca19aa3a1b6da044c902e2f8f15388692847d2d30b14694b229217"
+    },
+    {
+      "path": "static/videos/vidu-s2-comp/image_reference_eval_cases_20260915_with_product_refs/04_case_108/rtc-997707938619473920-1789543699407_with_product_refs.mp4",
+      "bytes": 7092963,
+      "sha256": "a245f7f58060f3014f99f7ad65126a13c085f0afd548e349363f8707740de432"
+    },
+    {
+      "path": "static/videos/vidu-s2-comp/image_reference_eval_cases_20260915_with_product_refs/07_case_024/rtc-997708579890794496-1789543866428_with_product_refs.jpg",
+      "bytes": 91676,
+      "sha256": "3bec329789334840e2bb6d99b96c90e7cc3cf874edf121cec7f71ec4c7b931b1"
+    },
+    {
+      "path": "static/videos/vidu-s2-comp/image_reference_eval_cases_20260915_with_product_refs/07_case_024/rtc-997708579890794496-1789543866428_with_product_refs.mp4",
+      "bytes": 5571388,
+      "sha256": "2fbecf180b9f52e4b4aaa651a47d20f7c8b996f07a0ac4ff1dff5cd3378f55c3"
+    },
+    {
+      "path": "static/videos/vidu-s2-comp/vidu_hd_ack3s_corrected_02_09_first_image_20260916_with_product_refs/02_case_085_first_image_with_product_ref.jpg",
+      "bytes": 125535,
+      "sha256": "ecfca22e516c2444ddec4aca1ecf0ec2c30d01528892c4af141fe52deb5a27dd"
+    },
+    {
+      "path": "static/videos/vidu-s2-comp/vidu_hd_ack3s_corrected_02_09_first_image_20260916_with_product_refs/02_case_085_first_image_with_product_ref.mp4",
+      "bytes": 8475987,
+      "sha256": "cd2bc9c9a3ac0ffdfe110dfc38282cc613d7afbad772655635c37b5926bda111"
     },
     {
       "path": "static/webfonts/fa-brands-400.woff2",
@@ -635,49 +678,9 @@
       "sha256": "71b3ce72680f4183d28db86b184542051fd533bb1146933233e4f6a20cf98cba"
     },
     {
-      "path": "static/webfonts/fa-regular-400.eot",
-      "bytes": 34350,
-      "sha256": "f9853ad337d523c0b35fe7ac306268a7035ce0ff7624710ed8b39c2b88b20a33"
-    },
-    {
-      "path": "static/webfonts/fa-regular-400.svg",
-      "bytes": 144714,
-      "sha256": "d42a64dc349a98075e8be12587943f2bd52065a8bb18960d7dc7390b535117e0"
-    },
-    {
-      "path": "static/webfonts/fa-regular-400.ttf",
-      "bytes": 34052,
-      "sha256": "5e811f0b32d488b9a183b77cfc7ac1ef44b3ea7aaed014e83975dfe597d221f6"
-    },
-    {
-      "path": "static/webfonts/fa-regular-400.woff",
-      "bytes": 16772,
-      "sha256": "6799c999e422710f40f70a60a6138fc38106226c44d7bd1b1023f5bb65befef9"
-    },
-    {
       "path": "static/webfonts/fa-regular-400.woff2",
       "bytes": 13548,
       "sha256": "ce20ed8a323117c8a718ff1ddc6dabb997373b575a8e896f2bf02b846c082c9d"
-    },
-    {
-      "path": "static/webfonts/fa-solid-900.eot",
-      "bytes": 204814,
-      "sha256": "e0e3c4af28348d721f8af603595c15d273a56f2b03392f9a413255fe5635f536"
-    },
-    {
-      "path": "static/webfonts/fa-solid-900.svg",
-      "bytes": 917575,
-      "sha256": "1a46e780ce5beb6507d62af8b20a92b33c8f042e87c612f4bbf8330bfc353419"
-    },
-    {
-      "path": "static/webfonts/fa-solid-900.ttf",
-      "bytes": 204528,
-      "sha256": "2caded242c04139761742fe0cda7f6592df1b6686857532c8a7c2e2536b976e4"
-    },
-    {
-      "path": "static/webfonts/fa-solid-900.woff",
-      "bytes": 104280,
-      "sha256": "aab971ade1633ab836222074ceae0aad8a082d900908f27491b221d6e83998ca"
     },
     {
       "path": "static/webfonts/fa-solid-900.woff2",

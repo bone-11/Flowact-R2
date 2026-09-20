@@ -210,6 +210,10 @@ ul li {
   object-fit: contain;
 }
 
+.comparison-carousel.comparison-portrait .comparison-method video {
+  aspect-ratio: 9 / 16;
+}
+
 .comparison-method:first-child video {
   border-radius: 0 5px 5px 0;
 }
