@@ -468,6 +468,16 @@
       "sha256": "1cb507d117e8246b9d82fb2e741b84f2bcf9b3fa50ab55589a172aa7d624d70e"
     },
     {
+      "path": "static/videos/videochat/P0_talk_1_s2s_roleplay_20260820_v26_more_human_empathy_sophie_bgm010_20260826_cut13p5_22_bgm006_20260928_no_bgm_audience_v2_faststart.mp4",
+      "bytes": 44030776,
+      "sha256": "d9d8de6d977d52441e3bed2485fabdad199635faa54482c01f0fbd38c58ee233"
+    },
+    {
+      "path": "static/videos/videochat/P0_talk_1_s2s_roleplay_20260820_v26_more_human_empathy_sophie_bgm010_20260826_cut13p5_22_bgm006_20260928_no_bgm_audience_v2_first_frame.jpg",
+      "bytes": 100331,
+      "sha256": "63cf74001cf52ce882f6686132e3f05628895a49c919f51ca28eae3f0f46528c"
+    },
+    {
       "path": "static/videos/videochat/comp/marked_showcase_20260904/ours/01_TRN-04_Q6_ours.jpg",
       "bytes": 78289,
       "sha256": "46688e7fc140434e619cee9af6e3b327d1e5445c2b476ba2d8ce18f21f35391c"
