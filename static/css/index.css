@@ -22,6 +22,25 @@ ul li {
     margin-bottom: 5px;
 }
 
+.publication-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.publication-links .link-block,
+.publication-links .button {
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .publication-links .button {
+    font-size: 0.9rem;
+  }
+}
+
 .dnerf {
   font-variant: small-caps;
 }
